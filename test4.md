@@ -1,4 +1,2 @@
-[test](some link
-[test](some link)
-
-
+[a link!](https://something.com)
+[this is not a link!](some-page.html)
