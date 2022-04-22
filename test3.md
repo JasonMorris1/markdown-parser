@@ -1,2 +1,1 @@
-My favorite search engine is [Duck Duck Go](some link) 
-][][][()()(}{\]\][\]][][]})]
+[link1](https://something.com)[link2](some-thing.html)[]
