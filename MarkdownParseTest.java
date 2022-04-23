@@ -79,4 +79,99 @@ public class MarkdownParseTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testfile2()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file2.md"));
+            assertEquals("Testing for first link", links.get(0), "https://something.com");
+            assertEquals("Testing for second link", links.get(1), "some-page.html");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testfile3()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file3.md"));
+            assertEquals(true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testfile4()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file4.md"));
+            assertEquals(true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testfile5()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file5.md"));
+            assertEquals(true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testfile6()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file6.md"));
+            assertEquals(true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testfile7()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file7.md"));
+            assertEquals(true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testfile8()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file8.md"));
+            assertEquals("a link on the first line", links.get(0));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    
+
+    
 }
