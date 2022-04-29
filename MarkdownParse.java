@@ -28,7 +28,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             if (closeParen == -1) break;
             String link = (markdown.substring(openParen + 1, closeParen).trim());
-            if (link.length() > 0)
+            if (link.length() > 0 && isValid(link))
             {
                 toReturn.add(link);
             }
@@ -45,5 +45,20 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
+    }
+
+    public static boolean isValid(String url)
+    {
+        /* Try creating a valid URL */
+        try {
+            new URL(url).toURI();
+            return true;
+        }
+          
+        // If there was an Exception
+        // while creating URL object
+        catch (Exception e) {
+            return false;
+        }
     }
 }
