@@ -44,7 +44,7 @@ public class MarkdownParseTest {
 
             ArrayList<String> links = MarkdownParse.getLinks(readFile("test2.md"));
             System.out.println("links:" + links.size());
-            assertEquals(links.get(0), "");
+            assertEquals(links.isEmpty(), true);
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
