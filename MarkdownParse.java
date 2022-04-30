@@ -58,6 +58,7 @@ public class MarkdownParse {
         // If there was an Exception
         // while creating URL object
         catch (Exception e) {
+            System.out.println(url);
             return false;
         }
     }
