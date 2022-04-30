@@ -45,7 +45,6 @@ public class MarkdownParse {
                 }
             }
         }
-
         return toReturn;
         
     }
@@ -60,16 +59,11 @@ public class MarkdownParse {
 
     public static boolean isValid(String url)
     {
-        /* Try creating a valid URL */
         try {
             new URL(url).toURI();
             return true;
         }
-          
-        // If there was an Exception
-        // while creating URL object
         catch (Exception e) {
-            System.out.println(url);
             return false;
         }
     }
