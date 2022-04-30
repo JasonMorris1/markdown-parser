@@ -176,7 +176,13 @@ public class MarkdownParseTest {
      @Test
     public void testfile9()
     {
-        assertEquals(true, true);
+        try {
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("test-file9.md"));
+            assertEquals("check size of list for dupes", 1, links.size());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     

@@ -34,6 +34,17 @@ public class MarkdownParse {
             currentIndex = closeParen + 1;
         }
 
+        for (int i = 0; i < toReturn.size(); ++i) {
+            String currString = toReturn.get(i);
+
+            for (int j = i + 1; j < toReturn.size(); ++j) {
+                if (currString.equals(toReturn.get(j))) {
+                    toReturn.remove(j);
+                    j -= 1;
+                }
+            }
+        }
+
         return toReturn;
         
     }
