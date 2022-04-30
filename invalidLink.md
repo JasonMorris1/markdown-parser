@@ -1,1 +1,1 @@
-[invalidLink](this is not a link lol)
+[invalidLink](this is not a link)
