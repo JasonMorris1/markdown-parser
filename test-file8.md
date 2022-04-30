@@ -1,2 +1,2 @@
-[](a link on the first line)
+[](https://www.google.com/)
 [
