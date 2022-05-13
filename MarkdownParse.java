@@ -15,18 +15,23 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int mark = markdown.indexOf("!", currentIndex);
             int openBracket = markdown.indexOf("[", currentIndex);
+            
             if (mark != -1 && openBracket - mark == 1) 
             {
                  openBracket = markdown.indexOf("[", openBracket + 1); //skip this image 
             }
             if (openBracket == -1) break;
+
             int closeBracket = markdown.indexOf("]", openBracket);
             if (closeBracket == -1) break;
+
             int openParen = markdown.indexOf("(", closeBracket);
             if (openParen - closeBracket > 1) break;
             if (openParen == -1) break;
+
             int closeParen = markdown.indexOf(")", openParen);
             if (closeParen == -1) break;
+
             String link = (markdown.substring(openParen + 1, closeParen).trim());
             if (link.length() > 0 && isValid(link))
             {
