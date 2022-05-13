@@ -15,7 +15,7 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int mark = markdown.indexOf("!", currentIndex);
             int openBracket = markdown.indexOf("[", currentIndex);
-            
+
             if (mark != -1 && openBracket - mark == 1) 
             {
                  openBracket = markdown.indexOf("[", openBracket + 1); //skip this image 
@@ -55,13 +55,6 @@ public class MarkdownParse {
     }
 
 
-    public static void main(String[] args) throws IOException {
-        Path fileName = Path.of(args[0]);
-        String content = Files.readString(fileName);
-        ArrayList<String> links = getLinks(content);
-	    System.out.println(links);
-    }
-
     public static boolean isValid(String url)
     {
         try {
@@ -72,5 +65,14 @@ public class MarkdownParse {
             return false;
         }
     }
+
+    public static void main(String[] args) throws IOException {
+        Path fileName = Path.of(args[0]);
+        String content = Files.readString(fileName);
+        ArrayList<String> links = getLinks(content);
+	    System.out.println(links);
+    }
+
+
 }
 //test
