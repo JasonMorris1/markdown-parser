@@ -205,6 +205,58 @@ public class MarkdownParseTest {
         }
     }
 
+    @Test
+    public void testSnippet1()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet1.md"));
+           // assertEquals("no valid links in file", true, links.isEmpty());
+           printList(links);
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSnippet2()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet2.md"));
+            assertEquals("no valid links in file", true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSnippet3()
+    {
+        try {
+
+            ArrayList<String> links = MarkdownParse.getLinks(readFile("snippet3.md"));
+        
+            //assertEquals("no valid links in file", true, links.isEmpty());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+
+    public void printList(ArrayList<String> list)
+    {
+        for (String s: list)
+        {
+            System.out.print(s);
+        }
+    }
+
+
 
     
 }

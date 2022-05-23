@@ -40,6 +40,8 @@ public class MarkdownParse {
             currentIndex = closeParen + 1;
         }
 
+
+        //removes duplicate links
         for (int i = 0; i < toReturn.size(); ++i) {
             String currString = toReturn.get(i);
 
@@ -55,6 +57,12 @@ public class MarkdownParse {
     }
 
 
+    /**
+     * Checks if url is valid
+     * url is valid if it contains https://www.something.something
+     * @param url
+     * @return
+     */
     public static boolean isValid(String url)
     {
         try {
