@@ -33,7 +33,7 @@ public class MarkdownParse {
             if (closeParen == -1) break;
 
             String link = (markdown.substring(openParen + 1, closeParen).trim());
-            if (link.length() > 0 && isValid(link))
+            if (link.length() > 0)
             {
                 toReturn.add(link);
             }
@@ -63,16 +63,16 @@ public class MarkdownParse {
      * @param url
      * @return
      */
-    public static boolean isValid(String url)
-    {
-        try {
-            new URL(url).toURI();
-            return true;
-        }
-        catch (Exception e) {
-            return false;
-        }
-    }
+    // public static boolean isValid(String url)
+    // {
+    //     try {
+    //         new URL(url).toURI();
+    //         return true;
+    //     }
+    //     catch (Exception e) {
+    //         return false;
+    //     }
+    // }
 
     public static void main(String[] args) throws IOException {
         Path fileName = Path.of(args[0]);
